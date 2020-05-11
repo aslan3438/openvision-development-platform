@@ -11,7 +11,6 @@ TRANSCODING_CHECK = "${@bb.utils.contains_any("MACHINE_FEATURES", "vuplus gigabl
 
 ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-audiosync \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "${BACKUPSUITE_CHECK}", d)} \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash middleflash", "enigma2-plugin-extensions-cacheflush", "", d)} \
 	enigma2-plugin-extensions-cutlisteditor \
 	enigma2-plugin-extensions-graphmultiepg \
@@ -21,12 +20,8 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-openwebif-vision \
 	enigma2-plugin-extensions-pictureplayer \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash middleflash", "enigma2-plugin-extensions-pluginskinmover", "", d)} \
-	enigma2-plugin-extensions-socketmmi \
 	enigma2-plugin-skins-pli-hd \
-	${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "enigma2-plugin-systemplugins-animationsetup", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "${BLINDSCAN_CHECK}" , "", d)} \
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hdmicec \
 	enigma2-plugin-systemplugins-hotplug \
@@ -34,7 +29,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-osdpositionsetup \
 	enigma2-plugin-systemplugins-positionersetup \
 	enigma2-plugin-systemplugins-satfinder \
-	${@bb.utils.contains("MACHINE_FEATURES", "sh4booster", "enigma2-plugin-systemplugins-sh4boostercontrol", "", d)} \
 	enigma2-plugin-systemplugins-softwaremanager \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "7seg 7segment", "${MACHINE_SPECIFIC_VFD}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "enigma2-plugin-systemplugins-videoenhancement", "", d)} \
@@ -51,10 +45,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-osd3dsetup \
 	enigma2-plugin-systemplugins-terrestrialscan", d)} \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash middleflash", "", " \
-	enigma2-plugin-extensions-e2iplayer \
-	enigma2-plugin-extensions-filecommander \
-	enigma2-plugin-extensions-keyadder \
-	enigma2-plugin-extensions-openwebif-vision-terminal \
 	enigma2-plugin-skins-octetfhd \
 	enigma2-plugin-softcams-oscam \
 	enigma2-plugin-systemplugins-autobouquetsmaker", d)} \
@@ -62,11 +52,8 @@ ENIGMA2_PLUGINS += "\
 	"
 
 DEPENDS += "\
-	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-tbs", "blindscan-s2" , "", d)} \
 	enigma2 \
-	enigma2-alliance-plugins \
 	enigma2-locale-meta \
-	enigma2-persianempire-plugins \
 	enigma2-plugins \
 	"
 
@@ -96,19 +83,16 @@ MACHINE_FEATURE_RELATED_PLUGINS += "\
 
 IMAGE_INSTALL += "\
 	aio-grab \
-	cloudflare-dns \
 	cronie \
 	enigma2 \
 	enigma2-locale-meta \
 	${ENIGMA2_PLUGINS} \
-	${@bb.utils.contains("DEVELOPER_NAME", "persianprince", "enigma2-plugin-extensions-persianpalace", "", d)} \
 	frequency-xml-list-atsc \
 	frequency-xml-list-cables \
 	frequency-xml-list-satellites \
 	frequency-xml-list-terrestrial \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd libcrypto", "", d)} \
 	libavahi-client \
-	libcrypto-compat \
 	settings-autorestore \
 	tuxbox-links \
 	${@bb.utils.contains_any("MACHINE", "vuuno4kse vuultimo4k vuduo4k", "vuplus-hdmi-in-helper", "", d)} \
@@ -120,8 +104,6 @@ IMAGE_INSTALL += "\
 	curl \
 	nfs-utils \
 	openssh-sftp-server \
-	samba-base \
-	v4l-utils", d)} \
 	"
 
 export IMAGE_BASENAME = "openvision-enigma2"
