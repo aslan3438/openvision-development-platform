@@ -42,8 +42,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-epgrefresh \
 	enigma2-plugin-extensions-reconstructapsc \
 	enigma2-plugin-systemplugins-mountmanager \
-	enigma2-plugin-systemplugins-osd3dsetup \
-	enigma2-plugin-systemplugins-terrestrialscan", d)} \
+	enigma2-plugin-systemplugins-osd3dsetup", d)} \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash middleflash", "", " \
 	enigma2-plugin-skins-octetfhd \
 	enigma2-plugin-softcams-oscam \
@@ -103,7 +102,7 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash middleflash", "", " \
 	curl \
 	nfs-utils \
-	openssh-sftp-server \
+	openssh-sftp-server", d)} \
 	"
 
 export IMAGE_BASENAME = "openvision-enigma2"

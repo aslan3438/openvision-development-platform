@@ -32,7 +32,6 @@ DEPENDS_append_rpi += "\
 RDEPENDS_${PN} = "\
 	alsa-conf \
 	enigma2-fonts \
-	enigma2-plugin-extensions-pespeedup \
 	ethtool \
 	glibc-gconv-iso8859-15 \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash middleflash", "", "glibc-gconv-cp1250", d)} \
