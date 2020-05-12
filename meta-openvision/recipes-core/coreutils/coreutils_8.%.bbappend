@@ -1,5 +1,5 @@
 # I hope it solves the PAK archive (application/x-pak) problem
-PACKAGES += "${PN}-realpath"
+PACKAGES =+ "${PN}-realpath"
 
 FILES_${PN}-realpath = "${bindir}/realpath.${PN}"
 

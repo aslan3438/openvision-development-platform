@@ -29,6 +29,6 @@ do_install_append() {
 		rmdir ${D}${datadir}/examples
 }
 
-PACKAGES += "${PN}-examples"
+PACKAGES =+ "${PN}-examples"
 
 FILES_${PN}-examples = "${sbindir}"

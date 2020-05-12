@@ -22,7 +22,7 @@ UPSTREAM_CHECK_REGEX = "wireless_tools\.(?P<pver>(\d+)(\..*|))\.tar\.gz"
 
 S = "${WORKDIR}/wireless_tools.30"
 
-CFLAGS += "-I${S}"
+CFLAGS =+ "-I${S}"
 EXTRA_OEMAKE = "-e 'BUILD_SHARED=y' \
 		'INSTALL_DIR=${D}${base_sbindir}' \
 		'INSTALL_LIB=${D}${libdir}' \

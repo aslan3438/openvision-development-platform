@@ -9,7 +9,7 @@ SRC_URI_append_cube = " \
     file://util-linux-random.patch \
 "
 
-PACKAGES += "util-linux-flock"
+PACKAGES =+ "util-linux-flock"
 FILES_util-linux-flock = "${base_sbindir}/flock.${BPN}"
 
 ALTERNATIVE_util-linux-flock = "flock"

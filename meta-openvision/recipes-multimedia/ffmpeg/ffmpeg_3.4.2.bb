@@ -184,7 +184,7 @@ do_configure() {
     ${S}/configure ${EXTRA_OECONF}
 }
 
-PACKAGES += "libavcodec \
+PACKAGES =+ "libavcodec \
              libavdevice \
              libavfilter \
              libavformat \

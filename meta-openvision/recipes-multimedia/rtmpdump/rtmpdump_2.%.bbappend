@@ -1,6 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-PROVIDES += " librtmp librtmp1"
+PROVIDES =+ " librtmp librtmp1"
 
 SRC_URI = " \
 	git://git.ffmpeg.org/rtmpdump;protocol=git \
