@@ -4,7 +4,7 @@ LICENSE = "GPLv2+ & LGPLv2+"
 
 DEPENDS += "util-linux iso-codes zlib"
 
-PACKAGES_DYNAMIC += "^libgst.*"
+PACKAGES_DYNAMIC =+ "^libgst.*"
 
 PACKAGECONFIG ??= "alsa ogg opus pango theora vorbis"
 

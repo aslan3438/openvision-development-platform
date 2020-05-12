@@ -26,7 +26,7 @@ do_install() {
         install -m 644 net80211/*.h ${D}${includedir}/${BPN}/net80211
 }
 
-PACKAGES += "${PN}-modules ${PN}-tools"
+PACKAGES =+ "${PN}-modules ${PN}-tools"
 
 RDEPENDS_${PN}-modules = "kernel-module-aes-generic"
 
