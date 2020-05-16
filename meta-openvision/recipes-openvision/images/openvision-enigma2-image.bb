@@ -82,7 +82,6 @@ MACHINE_FEATURE_RELATED_PLUGINS += "\
 
 IMAGE_INSTALL += "\
 	aio-grab \
-	cronie \
 	enigma2 \
 	enigma2-locale-meta \
 	${ENIGMA2_PLUGINS} \

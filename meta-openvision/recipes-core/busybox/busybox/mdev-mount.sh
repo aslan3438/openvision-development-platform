@@ -13,8 +13,8 @@ log() {
 
 notify() {
 	# we don't really depend on the hotplug_e2_helper, but when it exists, call it
-	if [ -x ${bindir}/hotplug_e2_helper ]; then
-		${bindir}/hotplug_e2_helper $ACTION /block/$MDEV $PHYSDEVPATH
+	if [ -x /usr/bin/hotplug_e2_helper ]; then
+		/usr/bin/hotplug_e2_helper $ACTION /block/$MDEV $PHYSDEVPATH
 	fi
 }
 
@@ -299,10 +299,6 @@ case "$ACTION" in
 			if ! mount -t auto -o "${MOUNTOPTIONS}" /dev/$MDEV "$MOUNTPOINT" ; then
 				rmdir "$MOUNTPOINT"
 				log "!" "mount failed, mountpoint removed again"
-			elif [ -d "$MOUNTPOINT/bin" -a -d "$MOUNTPOINT/etc" -a -d "$MOUNTPOINT/lib" -a -d "$MOUNTPOINT/lib64" -a -d "$MOUNTPOINT/usr" ]; then
-				umount "$MOUNTPOINT"
-				rmdir "$MOUNTPOINT"
-				log "!" "don't mount Linux rootfs"
 			else
 				samba_share "$MOUNTPOINT" "$MODEL"
 			fi
